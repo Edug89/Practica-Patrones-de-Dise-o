@@ -31,6 +31,22 @@ class LoginView: UIView {
         return textField
     }()
     
+    private let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = "LOGIN"
+            
+        
+       
+//        button.backgroundColor = .white
+        button.configuration = configuration
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpViews()
@@ -44,6 +60,7 @@ class LoginView: UIView {
         addSubview(loginImage)
         addSubview(emailTextField)
         addSubview(passwordTextField)
+        addSubview(loginButton)
         
         NSLayoutConstraint.activate([
             loginImage.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -60,6 +77,11 @@ class LoginView: UIView {
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),
             passwordTextField.heightAnchor.constraint(equalToConstant: 30),
             passwordTextField.widthAnchor.constraint(equalToConstant: 200),
+            
+            loginButton.topAnchor.constraint(equalTo: topAnchor, constant: 450),
+            loginButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),
+            loginButton.heightAnchor.constraint(equalToConstant: 30),
+            loginButton.widthAnchor.constraint(equalToConstant: 200),
 //
         ])
         
