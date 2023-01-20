@@ -12,58 +12,69 @@ class LoginViewController: UIViewController {
     
     var mainView: LoginView { self.view as! LoginView }
     
-    var viewModel: HeroListViewModel?
-        weak var loginButton: UIButton!
-        weak var passwordTextField: UITextField!
-        weak var emailTextField: UITextField!
-        var login: String?
+    var viewModel: LoginViewModel?
+    var loginButton: UIButton?
+    var passwordTextField: UITextField?
+    var emailTextField: UITextField?
+    var errormessageView: UILabel?
+    var login: String?
     
     
     override func loadView() {
-        view = LoginView()
+        
+        let loginView = LoginView()
+                       
+       loginButton = loginView.getLoginButtonView()
+       emailTextField = loginView.getEmailView()
+       passwordTextField = loginView.getPasswordView()
+       errormessageView = loginView.getMessageView()
+
+
+        view = loginView
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButtonTapped()
-        //setUpUpdateUI()
+        
+        viewModel = LoginViewModel()
+                
+        loginButton?.addTarget(self, action: #selector(didLoginTapped), for: .touchUpInside)
     }
     
     func setUpUpdateUI(){
-            viewModel = HeroListViewModel()
-            //Preparando para recibir datos del viewModel
-            
-            viewModel?.updateLogin = { [weak self] login in
-                self?.login = login
-                print(login)
-            }
-        }
+        viewModel = LoginViewModel()
         
-        func getLogin(email: String, password: String){
+        viewModel?.updateLogin = { [weak self] login in
+            
+            DispatchQueue.main.async {
+            self?.login = login
+            self?.errormessageView?.text = login
+                
+            }
+        }
+    }
+        
+    func getLogin(email: String, password: String){
 
-            viewModel?.fetchLogin(email: email , password: password)
+        viewModel?.fetchLogin(email: email , password: password)
             
         }
             
-        func loginButtonTapped(){
+    @objc func didLoginTapped(sender: UIButton!) {
             
-            let viewLogin = LoginView()
-            viewLogin.buttonHandler = {
-                
-            guard let email = self.emailTextField.text,
-            !email.isEmpty else {
-                print("email is empty")
-             return
-             }
-            guard let password = self.passwordTextField.text, !password.isEmpty else {
-             print("Password is empty")
-             return
-             }
-
-              print("Llego a viewController")
-              self.getLogin(email: email, password: password)
-            }
+        guard let email = emailTextField?.text,
+        !email.isEmpty else {
+            print("email is empty")
+         return
          }
+        guard let password = passwordTextField?.text, !password.isEmpty else {
+         print("Password is empty")
+         return
+         }
+        
+        self.getLogin(email: email, password: password)
+        setUpUpdateUI()
+    }
     
 }

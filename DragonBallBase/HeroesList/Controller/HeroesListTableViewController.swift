@@ -18,6 +18,7 @@ class HeroesListTableViewController: UIViewController {
     var tableViewDataSource: HeroesListTableViewDataSource? //Cargamos la info de HeroesListTableView
     var tableViewDelegate: HeroesListTableViewDelegate? //Cargamos la info de HeroesListTableViewDelegate
     
+    
     override func loadView() {
         view = HeroesListView()
         
@@ -32,7 +33,7 @@ class HeroesListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = HeroListViewModel()
+        
         SetUpUpdateUI()
         getData()
         setUpTableDelegate()
@@ -40,6 +41,7 @@ class HeroesListTableViewController: UIViewController {
         }
     
     func SetUpUpdateUI() {
+        viewModel = HeroListViewModel()
         // Preparándome para recibir los datos que viene del viewModel
         viewModel?.updateUI = { [weak self] heroes in
             self?.heroes = heroes
