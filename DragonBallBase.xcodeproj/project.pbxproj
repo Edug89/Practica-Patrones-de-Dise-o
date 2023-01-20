@@ -16,11 +16,6 @@
 		1487FB402977259D009A9819 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1487FB3F2977259D009A9819 /* Kingfisher */; };
 		1487FB4429772BDF009A9819 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB4329772BDF009A9819 /* HeroDetailView.swift */; };
 		1487FB4729772C27009A9819 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB4629772C27009A9819 /* HeroDetailViewController.swift */; };
-		1487FB4A29774028009A9819 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB4929774028009A9819 /* View.swift */; };
-		1487FB4C29774038009A9819 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB4B29774038009A9819 /* Interactor.swift */; };
-		1487FB4E29774041009A9819 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB4D29774041009A9819 /* Presenter.swift */; };
-		1487FB502977404D009A9819 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB4F2977404D009A9819 /* Entity.swift */; };
-		1487FB522977405A009A9819 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB512977405A009A9819 /* Router.swift */; };
 		1487FB59297854F9009A9819 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB58297854F9009A9819 /* LoginViewController.swift */; };
 		1487FB5B2979AB10009A9819 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB5A2979AB10009A9819 /* LoginViewModel.swift */; };
 		5D78B9912970857C00274846 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D78B9902970857C00274846 /* AppDelegate.swift */; };
@@ -43,11 +38,6 @@
 		1487FB3C2977228A009A9819 /* HeroesListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListTableViewDelegate.swift; sourceTree = "<group>"; };
 		1487FB4329772BDF009A9819 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		1487FB4629772C27009A9819 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
-		1487FB4929774028009A9819 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		1487FB4B29774038009A9819 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
-		1487FB4D29774041009A9819 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		1487FB4F2977404D009A9819 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		1487FB512977405A009A9819 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1487FB58297854F9009A9819 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1487FB5A2979AB10009A9819 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5D78B98D2970857C00274846 /* DragonBallBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,18 +90,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		1487FB482977400F009A9819 /* VIPER */ = {
-			isa = PBXGroup;
-			children = (
-				1487FB4929774028009A9819 /* View.swift */,
-				1487FB4B29774038009A9819 /* Interactor.swift */,
-				1487FB4D29774041009A9819 /* Presenter.swift */,
-				1487FB4F2977404D009A9819 /* Entity.swift */,
-				1487FB512977405A009A9819 /* Router.swift */,
-			);
-			path = VIPER;
-			sourceTree = "<group>";
-		};
 		1487FB5529784FBE009A9819 /* LoginUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +134,6 @@
 		5D78B98F2970857C00274846 /* DragonBallBase */ = {
 			isa = PBXGroup;
 			children = (
-				1487FB482977400F009A9819 /* VIPER */,
 				1487FB392975FE68009A9819 /* MvvM */,
 				5D78B9A6297088B300274846 /* Utils */,
 				1487FB5529784FBE009A9819 /* LoginUser */,
@@ -306,21 +283,16 @@
 			files = (
 				5D78B9952970857C00274846 /* LoginView.swift in Sources */,
 				5D78B9912970857C00274846 /* AppDelegate.swift in Sources */,
-				1487FB4A29774028009A9819 /* View.swift in Sources */,
-				1487FB4E29774041009A9819 /* Presenter.swift in Sources */,
 				1487FB3B2975FE8D009A9819 /* HeroListViewModel.swift in Sources */,
 				1487FB382975F76C009A9819 /* HeroListViewCell.swift in Sources */,
-				1487FB522977405A009A9819 /* Router.swift in Sources */,
 				5D78B9932970857C00274846 /* SceneDelegate.swift in Sources */,
 				1487FB59297854F9009A9819 /* LoginViewController.swift in Sources */,
-				1487FB4C29774038009A9819 /* Interactor.swift in Sources */,
 				5D78B9A8297088C100274846 /* Constants.swift in Sources */,
 				1487FB362975EF6C009A9819 /* HeroesListTableViewDataSource.swift in Sources */,
 				5D78B9AD2970895600274846 /* ApiClient.swift in Sources */,
 				1487FB3D2977228A009A9819 /* HeroesListTableViewDelegate.swift in Sources */,
 				1487FB4729772C27009A9819 /* HeroDetailViewController.swift in Sources */,
 				1487FB4429772BDF009A9819 /* HeroDetailView.swift in Sources */,
-				1487FB502977404D009A9819 /* Entity.swift in Sources */,
 				5D78B9AF2970897600274846 /* HeroModel.swift in Sources */,
 				1487FB322975D5CA009A9819 /* HeroesListView.swift in Sources */,
 				1487FB342975DB38009A9819 /* HeroesListTableViewController.swift in Sources */,

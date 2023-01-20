@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 //En el ViewMoldel no debermiamos tener nunca UIKIT
 
 class HeroListViewModel: NSObject {
