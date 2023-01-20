@@ -22,6 +22,7 @@
 		1487FB502977404D009A9819 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB4F2977404D009A9819 /* Entity.swift */; };
 		1487FB522977405A009A9819 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB512977405A009A9819 /* Router.swift */; };
 		1487FB59297854F9009A9819 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB58297854F9009A9819 /* LoginViewController.swift */; };
+		1487FB5B2979AB10009A9819 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487FB5A2979AB10009A9819 /* LoginViewModel.swift */; };
 		5D78B9912970857C00274846 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D78B9902970857C00274846 /* AppDelegate.swift */; };
 		5D78B9932970857C00274846 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D78B9922970857C00274846 /* SceneDelegate.swift */; };
 		5D78B9952970857C00274846 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D78B9942970857C00274846 /* LoginView.swift */; };
@@ -48,6 +49,7 @@
 		1487FB4F2977404D009A9819 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		1487FB512977405A009A9819 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1487FB58297854F9009A9819 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1487FB5A2979AB10009A9819 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5D78B98D2970857C00274846 /* DragonBallBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D78B9902970857C00274846 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D78B9922970857C00274846 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				1487FB3A2975FE8D009A9819 /* HeroListViewModel.swift */,
+				1487FB5A2979AB10009A9819 /* LoginViewModel.swift */,
 			);
 			path = MvvM;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				5D78B9AF2970897600274846 /* HeroModel.swift in Sources */,
 				1487FB322975D5CA009A9819 /* HeroesListView.swift in Sources */,
 				1487FB342975DB38009A9819 /* HeroesListTableViewController.swift in Sources */,
+				1487FB5B2979AB10009A9819 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

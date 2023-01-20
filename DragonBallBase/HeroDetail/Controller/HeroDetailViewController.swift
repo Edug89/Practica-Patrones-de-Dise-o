@@ -10,7 +10,7 @@ import UIKit
 
 class HeroDetailViewController: UIViewController {
     
-    var mainView: HeroDetailView { self.view as! HeroDetailView } // convertimos la vista de la clase tableView a HeroesList View
+    var mainView: HeroDetailView { self.view as! HeroDetailView } // convertimos la vista de la clase tableView a HeroesListView
     
     init(HeroDetailModel: HeroModel) {
         super.init(nibName:nil, bundle: nil)

@@ -18,6 +18,7 @@ class LoginView: UIView {
     let emailTextField = {
         var textField = UITextField()
         textField.placeholder = "Username"
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
         textField.backgroundColor = .white
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -27,29 +28,35 @@ class LoginView: UIView {
         var textField = UITextField()
         textField.placeholder = "Password"
         textField.backgroundColor = .white
+        textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
+    
+    var buttonHandler: (() -> Void)?
     
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         
         var configuration = UIButton.Configuration.filled()
         configuration.title = "LOGIN"
-            
-        
-       
-//        button.backgroundColor = .white
+        button.addTarget(LoginView.self, action: #selector(loginAction), for: .touchUpInside)
         button.configuration = configuration
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc func loginAction(sender: UIButton!) {
+                 print("Button Clicked")
+                 buttonHandler?()
+            }
     
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpViews()
+        
     }
     
     required init?(coder: NSCoder) {

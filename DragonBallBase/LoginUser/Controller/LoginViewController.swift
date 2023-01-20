@@ -10,24 +10,60 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var mainView: LoginView { self.view as! LoginView } // convertimos la vista de la clase tableView a HeroesList View
+    var mainView: LoginView { self.view as! LoginView }
     
-//    init(HeroDetailModel: HeroModel) {
-//        super.init(nibName:nil, bundle: nil)
-//        mainView.configure(HeroDetailModel) //Aquí le indicas que te coja el heroe que coges
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    var viewModel: HeroListViewModel?
+        weak var loginButton: UIButton!
+        weak var passwordTextField: UITextField!
+        weak var emailTextField: UITextField!
+        var login: String?
     
     
     override func loadView() {
         view = LoginView()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButtonTapped()
+        //setUpUpdateUI()
     }
+    
+    func setUpUpdateUI(){
+            viewModel = HeroListViewModel()
+            //Preparando para recibir datos del viewModel
+            
+            viewModel?.updateLogin = { [weak self] login in
+                self?.login = login
+                print(login)
+            }
+        }
+        
+        func getLogin(email: String, password: String){
+
+            viewModel?.fetchLogin(email: email , password: password)
+            
+        }
+            
+        func loginButtonTapped(){
+            
+            let viewLogin = LoginView()
+            viewLogin.buttonHandler = {
+                
+            guard let email = self.emailTextField.text,
+            !email.isEmpty else {
+                print("email is empty")
+             return
+             }
+            guard let password = self.passwordTextField.text, !password.isEmpty else {
+             print("Password is empty")
+             return
+             }
+
+              print("Llego a viewController")
+              self.getLogin(email: email, password: password)
+            }
+         }
     
 }

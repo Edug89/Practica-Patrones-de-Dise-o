@@ -10,7 +10,8 @@ import UIKit
 
 class HeroesListTableViewController: UIViewController {
     
-    var mainView: HeroesListView { self.view as! HeroesListView } // convertimos la vista de la clase tableView a HeroesList View
+    var mainView: HeroesListView { self.view as! HeroesListView }// convertimos la vista de la clase tableView a HeroesList View
+    
     var heroes: [HeroModel] = []
     var viewModel: HeroListViewModel?
     

@@ -14,7 +14,9 @@ class HeroListViewModel: NSObject {
 //        super.init()
     }
     
-    var updateUI: ((_ heroes: [HeroModel]) -> Void)? //Actualiza la lista de heroes,
+    var updateUI: ((_ heroes: [HeroModel]) -> Void)? //Actualiza la lista de heroes
+    
+    var updateLogin: ((_ token: String)->Void)?
     
     func fetchData() {
         
@@ -25,5 +27,24 @@ class HeroListViewModel: NSObject {
             self?.updateUI?(heroes)
         }
     }
+    
+    func fetchLogin(email: String, password: String){
+            
+            let email: String? = email
+            let password: String? = password
+            
+            let myToken = "eyJhbGciOiJIUzI1NiIsImtpZCI6InByaXZhdGUiLCJ0eXAiOiJKV1QifQ.eyJlbWFpbCI6ImNhbWlsYWxsb3Blejk1QGdtYWlsLmNvbSIsImlkZW50aWZ5IjoiMUVDOTlEMDMtNEMxMy00RkU1LUIwREEtQkJCNDFGQUUzN0RGIiwiZXhwaXJhdGlvbiI6NjQwOTIyMTEyMDB9.exgpZhqVdpjD3S4jQ--qNVTrrhXHCrKawiI_tpHQexs"
+            
+            let apiClient = ApiClient(token: myToken)
+
+            apiClient.login(user: email ?? "edugproduce@gmail.com", password: password ?? "200789") { loginToken, error in
+                
+                debugPrint("PMG: \(loginToken ?? "No login")")
+                
+                debugPrint("PMG:", error ?? "No error")
+                
+                self.updateLogin?(loginToken ?? "No token")
+            }
+        }
     
 }
