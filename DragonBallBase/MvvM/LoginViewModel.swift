@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 class LoginViewModel: NSObject {
     
@@ -33,7 +32,7 @@ class LoginViewModel: NSObject {
             
             debugPrint("PMG:", error ?? "No error")
             
-            self.updateLogin?(loginToken ?? "No token")
+            self.updateLogin?(loginToken ?? "Error en email o password sin acceso")
         }
     }
 }

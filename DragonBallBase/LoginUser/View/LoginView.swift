@@ -14,7 +14,7 @@ class LoginView: UIView {
         let label = UILabel()
         label.text = "Login to enter"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -42,6 +42,7 @@ class LoginView: UIView {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
         button.backgroundColor = .systemBlue
+        button.layer.borderWidth = .init(2)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -50,7 +51,6 @@ class LoginView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-//        label.backgroundColor = .white
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -111,7 +111,7 @@ class LoginView: UIView {
             
             loginButton.topAnchor.constraint(equalTo: topAnchor, constant: 450),
             loginButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),
-            loginButton.heightAnchor.constraint(equalToConstant: 40),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
             loginButton.widthAnchor.constraint(equalToConstant: 200),
             
             errormessageView.widthAnchor.constraint(equalToConstant: 20),
