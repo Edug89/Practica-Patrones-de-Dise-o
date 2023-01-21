@@ -1,4 +1,8 @@
-En esta práctica implementaremos varios patrones de diseño MVC ,MVVM y 
-VIPER.
+**En esta práctica implemento MVVM como patron de diseño:**
 
-Utilizando a si mismo MVVM para el desarrollo de la misma.
+Consta de un LoginView donde apreciaremos la vista en pantalla, el LoginViewController con el 
+que haremos de controllador de dichas mecánicas y además el LoginViewController en el cual 
+estará la función que hace de acceso o deniegue de entrada a la apliación.
+
+En caso de que las credenciales sean correctas devolverá en Token y si son incorrectas un 
+mensaje de error.
